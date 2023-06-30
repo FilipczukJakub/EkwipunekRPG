@@ -1,0 +1,42 @@
+﻿<Page x:Class="Projekt_PZ.EquipmentToAdd"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Projekt_PZ"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EquipmentToAdd">
+
+    <StackPanel>
+        <TextBlock x:Name="textBlock" Width="300" TextAlignment="Center">List of Items</TextBlock>
+        <ListView Grid.Row="2" Name="GridItemList" BorderThickness="1">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="BorderBrush" Value="LightGray"></Setter>
+                    <Setter Property="BorderThickness" Value="1,1,1,1"></Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="NameButton" Tag="{Binding Path=Name}" Content="{Binding Path=Name}" CommandParameter="{Binding}" Click="Item_Double_Click"></Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Description}" Header="Description" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=ItemRarity}" Header="Rarity" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Header="Price" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=ItemStats.ArmorClass}" Header="Armor Class" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=ItemStats.ActuallHitPoints}" Header="Max Hit Points" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=ItemStats.HitPoints}" Header="Hit Points" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=ItemStats.Strength}" Header="Strength" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=ItemStats.Dexterity}" Header="Dexterity" Width="auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=ItemStats.Inteligence}" Header="Intelligence" Width="auto"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</Page>

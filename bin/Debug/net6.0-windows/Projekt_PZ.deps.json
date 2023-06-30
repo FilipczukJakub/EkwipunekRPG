@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Projekt_PZ/1.0.0": {
+        "dependencies": {
+          "EkwipunekRPG": "1.0.0"
+        },
+        "runtime": {
+          "Projekt_PZ.dll": {}
+        }
+      },
+      "EkwipunekRPG/1.0.0": {
+        "runtime": {
+          "EkwipunekRPG.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Projekt_PZ/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EkwipunekRPG/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

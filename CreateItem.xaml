@@ -1,0 +1,87 @@
+﻿<Page x:Class="Projekt_PZ.CreateItem"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Projekt_PZ"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateItem">
+
+    <ScrollViewer Height="auto" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
+        <StackPanel>
+        <Label FontWeight="Bold">Item Type</Label>
+        <RadioButton Checked="RadioChecked" GroupName="Type" x:Name="UtilityRadio">Utility</RadioButton>
+        <RadioButton Checked="RadioChecked" GroupName="Type" x:Name="EquipmentRadio">Equipment</RadioButton>
+        <RadioButton Checked="RadioChecked" GroupName="Type" x:Name="MagickEquipmentRadio">Magick Equipment</RadioButton>
+        <Label FontWeight="Bold">Name</Label>
+        <TextBox x:Name="NameTextBox" Width="500" HorizontalAlignment="Left"></TextBox>
+        <Label FontWeight="Bold">Description</Label>
+        <TextBox x:Name="DescriptionTextBox" Width="500" HorizontalAlignment="Left" Height="40"></TextBox>
+        <Label FontWeight="Bold">On Use</Label>
+        <TextBox IsEnabled="False" x:Name="OnUseTextBox" Width="500" HorizontalAlignment="Left"></TextBox>
+        <Label FontWeight="Bold">Wear At</Label>
+        <Grid x:Name="WearAt" IsEnabled="False">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <CheckBox Tag="0" Grid.Row="0" Grid.Column="0" x:Name="HeadCheck" Content="Head"></CheckBox>
+            <CheckBox Tag="1" Grid.Row="0" Grid.Column="1" x:Name="ChestCheck" Content="Chest"></CheckBox>
+            <CheckBox Tag="2" Grid.Row="0" Grid.Column="2" x:Name="BackCheck" Content="Back"></CheckBox>
+            <CheckBox Tag="3" Grid.Row="0" Grid.Column="3" x:Name="LeftHandCheck" Content="Left Hand"></CheckBox>
+            <CheckBox Tag="4" Grid.Row="0" Grid.Column="4" x:Name="RightHandCheck" Content="Right Hand"></CheckBox>
+            <CheckBox Tag="5" Grid.Row="0" Grid.Column="5" x:Name="FeetCheck" Content="Feet"></CheckBox>
+        </Grid>
+        <Label FontFamily="Bold">Rarity</Label>
+        <ComboBox Name="RarityCombo" Width="200" HorizontalAlignment="Left">
+            <ComboBoxItem Tag="0" Content="Common"></ComboBoxItem>
+            <ComboBoxItem Tag="1" Content="Uncommon"></ComboBoxItem>
+            <ComboBoxItem Tag="2" Content="Rare"></ComboBoxItem>
+            <ComboBoxItem Tag="3" Content="Epic"></ComboBoxItem>
+            <ComboBoxItem Tag="4" Content="Legendary"></ComboBoxItem>
+        </ComboBox>
+        <Label FontWeight="Bold">Stats</Label>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" FontFamily="Bold">Armor Class</Label>
+            <Label Grid.Row="0" Grid.Column="1" FontFamily="Bold">Base Strength</Label>
+            <Label Grid.Row="0" Grid.Column="2" FontFamily="Bold">Additional HitPoints</Label>
+            <Label Grid.Row="0" Grid.Column="3" FontFamily="Bold">Recovery Hit Points</Label>
+            <Label Grid.Row="0" Grid.Column="4" FontFamily="Bold">Strength</Label>
+            <Label Grid.Row="0" Grid.Column="5" FontFamily="Bold">Dexterity</Label>
+            <Label Grid.Row="0" Grid.Column="6" FontFamily="Bold">Inteligence</Label>
+            <TextBox Text="0" Grid.Row="1" Grid.Column="0" x:Name="ArmorClassBox"></TextBox>
+            <TextBox Text="0" Grid.Row="1" Grid.Column="1" x:Name="BaseStrengthBox"></TextBox>
+            <TextBox Text="0" Grid.Row="1" Grid.Column="2" x:Name="AdditionallHitPointsBox"></TextBox>
+            <TextBox Text="0" Grid.Row="1" Grid.Column="3" x:Name="RecoveryHitPointsBox"></TextBox>
+            <TextBox Text="0" Grid.Row="1" Grid.Column="4" x:Name="StrengthBox"></TextBox>
+            <TextBox Text="0" Grid.Row="1" Grid.Column="5" x:Name="DexterityBox"></TextBox>
+            <TextBox Text="0" Grid.Row="1" Grid.Column="6" x:Name="InteligenceBox"></TextBox>
+        </Grid>
+            <TextBlock x:Name="ExceptionText"></TextBlock>
+            <Label FontWeight="Bold">Price</Label>
+            <TextBox Text="0" x:Name="PriceBox"></TextBox>
+            <Button Click="SaveItem">Zapisz</Button>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
